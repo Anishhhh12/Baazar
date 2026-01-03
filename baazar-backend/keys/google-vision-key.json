@@ -1,13 +1,1 @@
-{
-  "type": "service_account",
-  "project_id": "baazar-auth-480216",
-  "private_key_id": "50abf43c77aab572e4888f86943d0eb99d40cfc0",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCqtGtI2bQq/ICN\n60JMsydlqzLAt+596oDy8tCMyJfUnB4zV4pQ+Rw/Fbzzyr5zNAbLaw2csDEmUMD6\nY5pP7VE/JCp5uQ4vaV8yTsQkil5OJr7Z1Z83Q6Khlfcbtr5wCpppvC4Fb31Cet6a\nTX1Xf3Ggk9G6X9PWjwGWlAb6U9PvEV9AyXwVwZnNaG6/wgtnCNTiBA1nH8HnXybY\nVM0hBR9oVHxNKkqogmkulH4AUADBZJFr912bkaXCAiVJ/o+khcTXQuTeeGl1EdgB\nrVp+1PqiDyqILvEz6iSWKxmHAfAUXIxk6+SBPH4MYVJd4pCy3gVwnKEvkAtVJ8wF\nvynSLWEpAgMBAAECgf8nQhbqSicFO8zU1qYIvarx1s11RNe0XZoKRY1w0zEX1E+d\nvyQwOxoj5/vslVP3ap+laJlYz6x+A1ReQUnb19g3jTm3hLeeb71U9IhnXusRThfW\nQSq8qvFb+AE8fmqNmeKpLn3nAhzsjRVkpy2MUeLv6w7wrdkqHvleh+yS5XR4JkWo\n+e64UajoKATHrco0t5Upwo4yw2BBuieL9kCxHKCk8VplBBhlUghXTNPgnX2l/vgz\nMML3a0OvWo4WIHMgI93L6zmBL9QTCd4b2mLsXHEO1hkZaiiiiyJzGV25R2VJUxkA\nCqJBhyj/7QdtxFxS9NeweLnDUsZNFf9NJgy7IyECgYEA7iloe6b5CgpG3VJPiJnj\nmsieKMTWtwJalwWq+Rgn7hPyjdAA2TIgu7Mfs2aFURXtUilSN9mMXEP5aYwFbgkn\neAz0uzF+J5u+nJOwaMtI9vd+LbbXBF8jC6j62HN8icHKt4kRKKn96pvU+8XUp08Y\nqylGZqKV5BOtL4yCGGkOK0kCgYEAt32RhDL9Qzr2aPCqMK/DxKzVc8MkTalTNx/h\nmKpWGNgnPgHOt/XuwxCQ3WVRgn9/bj0OwidrAmHM/TmmW8EGSLesGbPihkjIV5iC\nrAP/1DAm3ZLIZl1o+5sv9+1jLplbcIZ1mWRmnjCU6OPykGYya5TIMevhiAFn68ZT\n//9opuECgYEA2LMGpZQc/3ywVArj4Sgcx6aI+hF4SNa0dLusgK/xDRhLV6uOShHp\nZMAsNQEwhsILyPleHQEuTHlxBA9qlV9w8TPgrj7vSbzVaASdvAxT3Jr+zTuTUx/5\ndE+Rxsb15yZUfEEUQsrCBek6lse/oWg/yuVocFS5S+h3aU9QxEM6qDkCgYEAmnIE\nGO0+ReeMXvorln1rX9FGfYEEvqXGmICqR/EgNRtDtKqa0DceeGwqM2BDwn8EyMp1\n8LBzHvcpLv/mahbH7k9DegLyqar7jtedLaLUJEs/e4NAUQFRC28tahcTQ7brw4Q5\n2horUf18aabsleSfjfQWqgZsuCjOyyMNs03NTaECgYEAzNfx2qC1PsRKuhOs91Wo\nQmKSJE8ZTyGMN6v8zUd48GKv+2fJaxrNcBK50BDczkFDUGn09xBY95Ei+ic4uCmI\nlf9y7ccgHMcBBnPt2FdSje5KErOUNh9U0hS1Hxs7qTA8BBi1WwlF6OgdQ6QCazDr\nlXzYayBKojeGvlTP9mlpTeU=\n-----END PRIVATE KEY-----\n",
-  "client_email": "vision-service@baazar-auth-480216.iam.gserviceaccount.com",
-  "client_id": "106111561695975757491",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/vision-service%40baazar-auth-480216.iam.gserviceaccount.com",
-  "universe_domain": "googleapis.com"
-}
+

@@ -21,7 +21,7 @@ const ContactSupport = () => {
     setLoading(true);
 
     try {
-      await axios.post("http://localhost:5000/api/support", formData);
+      await API.post("/api/support", formData);
 
       alert("Your message has been sent successfully!");
 
@@ -111,3 +111,4 @@ const ContactSupport = () => {
 };
 
 export default ContactSupport;
+

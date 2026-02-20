@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import session from "express-session";
 import passport from "passport";
-import "./src/auth/passport.js"; // ensure passport strategies are loaded 
+import "./src/auth/Passport.js"; // ensure passport strategies are loaded 
 
 import express from "express";
 import cookieParser from "cookie-parser";

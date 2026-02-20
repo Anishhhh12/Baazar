@@ -17,10 +17,9 @@ export default function SellerDashboard() {
 
   // Load seller's products from backend
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/products/mine", {
-        headers: { "x-seller-id": sellerId },
-      })
+    API.get("/api/products/mine", {
+  headers: { "x-seller-id": sellerId },
+})
       .then((res) => setProducts(res.data))
       .catch((err) => console.error("Error loading products:", err));
   }, []);
@@ -35,8 +34,8 @@ export default function SellerDashboard() {
     e.preventDefault();
 
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/products",
+      const res = await API.post(
+        "/api/products",
         { ...formData, sellerId },
         { headers: { "Content-Type": "application/json" } }
       );
@@ -194,3 +193,4 @@ export default function SellerDashboard() {
     </div>
   );
 }
+

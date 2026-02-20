@@ -11,7 +11,7 @@ const Suggestions = () => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/api/support/suggestion", {
+      await API.post("/api/support/suggestion", {
         suggestion,
       });
 
@@ -66,3 +66,4 @@ const Suggestions = () => {
 };
 
 export default Suggestions;
+

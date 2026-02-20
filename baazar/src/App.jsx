@@ -26,6 +26,7 @@ import Payment from "./pages/payment";
 import Seller from "./pages/Seller";
 import SellerDashboard from "./pages/SellerDashboard";
 import SellerOnboarding from "./pages/SellerOnboarding";
+import WishlistPage from "./pages/Wishlist";
 
 /* Static Feature Pages */
 import ExplorePlus from "./pages/ExplorePlus";
@@ -98,6 +99,8 @@ function App() {
           // inside routes
           <Route path="/visual-search" element={<VisualSearch />} />
           <Route path="/search" element={<SearchResults />} />
+          <Route path="/wishlist" element={<WishlistPage />} />
+
 
 
         </Routes>

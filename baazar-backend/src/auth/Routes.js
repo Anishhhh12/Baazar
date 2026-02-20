@@ -4,7 +4,7 @@ import { body } from 'express-validator';
 import * as controller from './authController.js';
 import { requireAuth } from './authMiddleware.js';
 import passport from 'passport';
-import './passport.js'; // initialize passport strategy
+import './Passport.js'; // initialize passport strategy
 import { googleCallback } from "./authController.js";
 
 

@@ -33,7 +33,7 @@ export default function Payment() {
       order_id: order.data.id,
 
       handler: async (response) => {
-        const verify = await API.post"/api/payment/verify-payment", {
+        const verify = await API.post("/api/payment/verify-payment", {
           ...response,
         });
 

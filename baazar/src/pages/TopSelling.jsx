@@ -12,8 +12,8 @@ const TopSelling = () => {
   useEffect(() => {
     const fetchTopSelling = async () => {
       try {
-        const res = await axios.get(
-          "http://localhost:5000/api/products/category/top-selling"
+        const res = await API.get(
+          "/api/products/category/top-selling"
         );
         setTopProducts(res.data);
       } catch (err) {
@@ -114,3 +114,4 @@ const TopSelling = () => {
 };
 
 export default TopSelling;
+

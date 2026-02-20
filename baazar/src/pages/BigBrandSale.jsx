@@ -10,9 +10,9 @@ const BigBrandSale = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(
-          "http://localhost:5000/api/products/category/big-brand-sale"
-        );
+        const res = await API.get(
+  "/api/products/category/big-brand-sale"
+);
         setBigBrandItems(res.data);
       } catch (err) {
         console.error("Error fetching Big Brand Sale items:", err);
@@ -88,3 +88,4 @@ const BigBrandSale = () => {
 };
 
 export default BigBrandSale;
+

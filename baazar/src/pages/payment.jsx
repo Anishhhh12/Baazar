@@ -20,7 +20,7 @@ export default function Payment() {
     await loadRazorpay();
 
     // Create order from backend
-    const order = await axios.post("http://localhost:5000/api/payment/create-order", {
+    const order = await API.post("/api/payment/create-order", {
       amount: amount || product.price,
     });
 
@@ -33,7 +33,7 @@ export default function Payment() {
       order_id: order.data.id,
 
       handler: async (response) => {
-        const verify = await axios.post("http://localhost:5000/api/payment/verify-payment", {
+        const verify = await API.post"/api/payment/verify-payment", {
           ...response,
         });
 
@@ -66,3 +66,4 @@ export default function Payment() {
     </div>
   );
 }
+

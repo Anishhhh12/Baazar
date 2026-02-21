@@ -9,7 +9,9 @@ import { useCart } from "../context/CartContext";
 // later we will import useWishlist from context
 
 const ProductCard = ({ product }) => {
-  const { wishlist, toggleWishlist } = useWishlist();
+  const wishlistContext = useWishlist() || {};
+  const wishlist = wishlistContext.wishlist || [];
+  const toggleWishlist = wishlistContext.toggleWishlist || (() => {});
   const { user } = useUser();
   const { addToCart } = useCart();
   const cart = useCart();

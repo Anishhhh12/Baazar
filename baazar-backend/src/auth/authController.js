@@ -26,10 +26,9 @@ export function signToken(user) {
 // Create a helper function for cookie options
 const getCookieOptions = () => ({
   httpOnly: true,
-  secure: process.env.NODE_ENV === 'production',
-  sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
-  maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
-  domain: process.env.COOKIE_DOMAIN || undefined,
+  secure: true,        // 🔥 always true (Render is HTTPS)
+  sameSite: 'None',    // 🔥 required for Vercel ↔ Render
+  maxAge: 7 * 24 * 60 * 60 * 1000,
   path: '/',
 });
 
@@ -274,12 +273,12 @@ export const googleCallback = async (req, res) => {
 
     // ✅ FIXED COOKIE (cross-domain safe)
     res.cookie("token", token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production", // 🔥 true on Render
-      sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax", // 🔥 required for Vercel ↔ Render
-      maxAge: 7 * 24 * 60 * 60 * 1000,
-      path: "/",
-    });
+  httpOnly: true,
+  secure: true,       // 🔥 always true
+  sameSite: "None",   // 🔥 always None
+  maxAge: 7 * 24 * 60 * 60 * 1000,
+  path: "/",
+});
 
     // ✅ REDIRECT TO FRONTEND
     return res.redirect(process.env.FRONTEND_URL);

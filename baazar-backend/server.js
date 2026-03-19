@@ -32,10 +32,7 @@ import searchRoutes from "./routes/searchRoutes.js";
 
 console.log("GOOGLE_CLIENT_ID:", process.env.GOOGLE_CLIENT_ID);
 // At the very bottom of server.js, after all app.use() routes:
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ message: err.message || "Internal server error" });
-});
+
 // =======================
 // APP SETUP
 // =======================
@@ -43,6 +40,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+app.set('trust proxy', 1); // ADD THIS
 const PORT = process.env.PORT || 5000;
 
 // =======================
@@ -136,3 +134,8 @@ app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
     console.log(`🚀 Server running on http://localhost:${PORT}`)
   );
 })();
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ message: err.message || "Internal server error" });
+});

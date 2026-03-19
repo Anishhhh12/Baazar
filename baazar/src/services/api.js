@@ -3,7 +3,12 @@ export default async function apiFetch(url, options = {}) {
     `${import.meta.env.VITE_API_URL}${url}`,
     {
       credentials: "include",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+  "Content-Type": "application/json",
+  ...(localStorage.getItem("token")
+    ? { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    : {}),
+},
       ...options,
       body: options.body ? JSON.stringify(options.body) : undefined,
     }

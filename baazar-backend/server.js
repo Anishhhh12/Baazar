@@ -25,6 +25,10 @@ import supportRoutes from "./routes/supportRoutes.js";
 import sellerRoutes from "./routes/sellerRoutes.js";
 import paymentRoutes from "./routes/paymentRoutes.js";
 import searchRoutes from "./routes/searchRoutes.js";
+// Add with the other imports at the top:
+import wishlistRoutes from "./routes/wishlistRoutes.js";
+
+
 
 
 
@@ -117,7 +121,8 @@ app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
   app.use("/api/payment", paymentRoutes);
   app.use("/api/visual-search", visualSearchRoutes);
   app.use("/api/search", searchRoutes);
-
+// Add with the other app.use() routes:
+  app.use("/api/wishlist", wishlistRoutes);
 
   // =======================
   // TEST / HEALTH

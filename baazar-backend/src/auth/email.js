@@ -12,8 +12,4 @@ export default async function sendEmail({ to, subject, html }) {
   if (error) throw new Error(error.message);
   console.log("✅ Email sent:", data.id);
 }
-```
 
-Add to Render env vars:
-```
-RESEND_API_KEY=re_xxxxxxxxx

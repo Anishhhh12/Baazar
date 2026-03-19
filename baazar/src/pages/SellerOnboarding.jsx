@@ -49,7 +49,7 @@ const SellerOnboarding = () => {
       uploadData.append("sellerId", sellerId);
 
       await axios.post(
-        "http://localhost:5000/api/sellers/register",
+        `${import.meta.env.VITE_API_URL}/api/sellers/register`,
         uploadData,
         {
           headers: { "Content-Type": "multipart/form-data" },

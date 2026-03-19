@@ -40,8 +40,6 @@ function setTokenCookie(res, token) {
 
 
 export const signup = async (req, res) => {
-  console.log("SIGNUP BODY:", req.body);
-
   try {
     const errors = validationResult(req);
     if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
@@ -54,26 +52,21 @@ export const signup = async (req, res) => {
     const token = user.generateVerificationToken();
     await user.save();
 
-    // Log verify link (useful when SMTP not configured)
+    // ✅ Respond immediately — don't wait for email
+    res.json({ message: 'Signup successful — check email to verify' });
+
+    // ✅ Send email in background (after response is sent)
     const verifyLink = `${BACKEND_URL}/api/auth/verify/${token}`;
-    console.log('Verify link:', verifyLink);
-
-    // send verification email
-    try {
-      await sendEmail({
-        to: user.email,
-        subject: 'Verify your email',
-        html: `<p>Hi ${user.name},</p>
+    sendEmail({
+      to: user.email,
+      subject: 'Verify your email',
+      html: `<p>Hi ${user.name},</p>
              <p>Please verify your email by clicking <a href="${verifyLink}">this link</a></p>`
-      });
-    } catch (mailErr) {
-      console.warn('Warning: sending email failed:', mailErr.message);
-    }
+    }).catch(err => console.warn('Email failed:', err.message));
 
-    return res.json({ message: 'Signup successful — check email to verify' });
   } catch (err) {
-    console.error(err);
-    return res.status(500).json({ message: 'Server error' });
+    console.error("SIGNUP ERROR:", err.message);
+    return res.status(500).json({ message: err.message });
   }
 };
 

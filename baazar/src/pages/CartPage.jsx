@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 const CartPage = () => {
   const { user } = useUser();
   const navigate = useNavigate();
+  const API = import.meta.env.VITE_API_URL;
 
   const { cartItems, removeFromCart, totalAmount, clearCart } = useCart();
   const [step, setStep] = useState("cart"); // cart → address → payment
@@ -44,7 +45,7 @@ useEffect(() => {
   // Create order on backend (called after successful payment)
   const placeOrder = async () => {
     try {
-      await axios.post("http://localhost:5000/api/orders", {
+      await axios.post(`${API}/api/orders`, {
         items: cartItems.map((item) => ({ productId: item.id, quantity: 1 })),
         address,
         totalAmount,
@@ -84,7 +85,7 @@ useEffect(() => {
     }
 
     // create order on backend — send amount in rupees as number
-    const res = await axios.post("http://localhost:5000/api/payment/create-order", {
+    const res = await axios.post(`${API}/api/payment/create-order`, {
       amount: Math.round(totalAmount), // totalAmount in rupees (integer)
     });
 
@@ -100,7 +101,7 @@ useEffect(() => {
       order_id: order.id,
       handler: async (response) => {
         // send response to backend verify route
-        const verify = await axios.post("http://localhost:5000/api/payment/verify-payment", response);
+        const verify = await axios.post(`${API}/api/payment/verify-payment`, response);
         if (verify.data.success) {
           // place order in DB
           await placeOrder();

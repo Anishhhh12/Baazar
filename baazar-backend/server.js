@@ -31,7 +31,11 @@ import searchRoutes from "./routes/searchRoutes.js";
 
 
 console.log("GOOGLE_CLIENT_ID:", process.env.GOOGLE_CLIENT_ID);
-
+// At the very bottom of server.js, after all app.use() routes:
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ message: err.message || "Internal server error" });
+});
 // =======================
 // APP SETUP
 // =======================

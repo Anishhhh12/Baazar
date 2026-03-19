@@ -42,6 +42,7 @@ export default function Login() {
       body: form,
     });
 
+if (res.token) localStorage.setItem("token", res.token);
 setUser(res.user); // ✅ TRUST LOGIN RESPONSE
 
 

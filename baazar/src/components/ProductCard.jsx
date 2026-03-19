@@ -23,13 +23,14 @@ const ProductCard = ({ product }) => {
   );
 
   const handleWishlistClick = (e) => {
-    e.stopPropagation();
-    if (!user) {
-      navigate("/login");
-      return;
-    }
-    toggleWishlist(product._id);
-  };
+  e.preventDefault();       // ADD THIS — stops the Link navigation
+  e.stopPropagation();      // keep this too
+  if (!user) {
+    navigate("/login");
+    return;
+  }
+  toggleWishlist(product._id);
+};
 
   const handleAddToCart = (e) => {
   e.stopPropagation();

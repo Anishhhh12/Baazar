@@ -57,7 +57,6 @@ function App() {
     );
   }
   return (
-    <CartProvider>     {/* <-- MUST wrap everything */}
       <Router>
         <Routes>
 
@@ -105,7 +104,7 @@ function App() {
 
         </Routes>
       </Router>
-    </CartProvider>
+    
   );
 }
 

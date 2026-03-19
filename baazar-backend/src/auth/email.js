@@ -1,25 +1,19 @@
-import nodemailer from "nodemailer";
-import dotenv from "dotenv";
-dotenv.config();
+import { Resend } from "resend";
 
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST || "smtp.gmail.com",
-  port: parseInt(process.env.SMTP_PORT) || 587,
-  secure: process.env.SMTP_SECURE === "true", // false for port 587
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-export default async function sendEmail({ to, subject, html, text }) {
-  const info = await transporter.sendMail({
-    from: process.env.EMAIL_FROM,
+export default async function sendEmail({ to, subject, html }) {
+  const { data, error } = await resend.emails.send({
+    from: "Baazar <onboarding@resend.dev>", // use this until you add your domain
     to,
     subject,
     html,
-    text: text || html,
   });
-  console.log("✅ Email sent:", info.messageId);
-  return info;
+  if (error) throw new Error(error.message);
+  console.log("✅ Email sent:", data.id);
 }
+```
+
+Add to Render env vars:
+```
+RESEND_API_KEY=re_xxxxxxxxx

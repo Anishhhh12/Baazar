@@ -186,10 +186,7 @@ export const login = async (req, res) => {
     const userResponse = user.toObject();
     delete userResponse.password;
     
-    res.json({ 
-      user: userResponse,
-      message: "Login successful" 
-    });
+    res.json({ user: userResponse, token, message: "Login successful" });
 
   } catch (err) {
     console.error("Login error:", err);
@@ -281,7 +278,7 @@ export const googleCallback = async (req, res) => {
 });
 
     // ✅ REDIRECT TO FRONTEND
-    return res.redirect(process.env.FRONTEND_URL);
+    return res.redirect(`${process.env.FRONTEND_URL}/auth/success?token=${token}`);
   } catch (err) {
     console.error("Google callback error:", err);
     return res.redirect(
